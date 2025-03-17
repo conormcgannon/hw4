@@ -1,18 +1,20 @@
 <h1><%= @place["name"] %></h1>
 
 <h2>My Entries</h2>
-<div class="container">
-  <div class="row">
-    <% for entry in @entries %>
-      <div class="col-md-4">
+<div class="row">
+  <% for entry in @entries %>
+    <div class="col-md-4">
       <div class="border p-3 mb-3">
         <h3><%= entry["title"] %></h3>
         <h4><%= entry["occurred_on"] %></h4>
         <p><%= entry["description"] %></p>
-        </div>
+        <% if entry.image.attached? %>
+          <%= image_tag url_for(entry.image), class: "img-fluid mt-2" %>
+        <% end %>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
+</div>
 </div>
 
 <p>

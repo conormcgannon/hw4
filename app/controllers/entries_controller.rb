@@ -9,6 +9,12 @@ class EntriesController < ApplicationController
     @entry["description"] = params["description"]
     @entry["occurred_on"] = params["occurred_on"]
     @entry["place_id"] = params["place_id"]
+    @entry["user_id"] = session["user_id"]
+
+    if params["image"].present?
+      @entry.image.attach(params["image"])
+    end
+    
     @entry.save
     redirect_to "/places/#{@entry["place_id"]}"
   end
