@@ -1,1 +1,31 @@
 /* Application styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 2px solid black; 
+  background-color: white;
+}
+
+.left-nav a,
+.right-nav a {
+  text-decoration: none;
+  color: black;
+  margin-right: 1rem;
+}
+
+.right-nav a:last-child {
+  margin-right: 0;
+}
+
+.container {
+  padding: 1rem;
+}
