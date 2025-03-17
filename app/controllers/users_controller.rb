@@ -10,10 +10,11 @@ class UsersController < ApplicationController
     @user["password"] = BCrypt::Password.creat(params["password"])
 
     if @user.save
-      <flash :notice="Thanks for signing up. Please login"
+      flash[:notice] = "Thanks for signing up. Please login"
       redirect_to "/login"
     else
       render "new"
     end
+    
   end
 end
